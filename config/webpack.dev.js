@@ -17,7 +17,7 @@ module.exports = merge.smart(webpackCommon, {
     historyApiFallback: true,
     overlay: true,
     contentBase: path.join(__dirname, "docs"),
-    host: "localhost",
+    host: "185.216.25.36",
     port: 8016,
     publicPath: "/"
   },
