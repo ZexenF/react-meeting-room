@@ -134,8 +134,7 @@ export default class App extends Component {
       <div className="empty">
         <img src={welcomeImage} alt="Welcome" />
         <h3>
-          No meetings are scheduled for the day. Create one by clicking the
-          button below.
+          None yet.
         </h3>
       </div>
     );
@@ -164,11 +163,11 @@ export default class App extends Component {
             {this.state.isEmpty && emptyState}
           </div>
           <a
-            className="primary-cta"
-            href="https://calendar.google.com/calendar?cid=c3FtMnVkaTFhZGY2ZHM3Z2o5aDgxdHVldDhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"
-            target="_blank"
+//            className="primary-cta"
+//            href="https://calendar.google.com/calendar?cid=c3FtMnVkaTFhZGY2ZHM3Z2o5aDgxdHVldDhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"
+//            target="_blank"
           >
-            +
+            
           </a>
         </div>
       </div>
