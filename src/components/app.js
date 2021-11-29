@@ -152,10 +152,10 @@ export default class App extends Component {
             this.state.isBusy ? "current-status busy" : "current-status open"
           }
         >
-          <h1>{this.state.isBusy ? "BUSY" : "OPEN"}</h1>
+          <h1>{this.state.isBusy ? "ROOM EST OCCUPE" : "ROOM EST LIBRE"}</h1>
         </div>
         <div className="upcoming-meetings">
-          <div className="current-time">{time}, 2018</div>
+          <div className="current-time">{time}</div>
           <h1>Upcoming Meetings</h1>
           <div className="list-group">
             {this.state.isLoading && loadingState}
