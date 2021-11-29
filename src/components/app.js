@@ -152,7 +152,7 @@ export default class App extends Component {
             this.state.isBusy ? "current-status busy" : "current-status open"
           }
         >
-          <h1>{this.state.isBusy ? "ROOM EST OCCUPE" : "ROOM EST LIBRE"}</h1>
+          <h1>{this.state.isBusy ? "ROOM OCCUPE" : "ROOM LIBRE"}</h1>
         </div>
         <div className="upcoming-meetings">
           <div className="current-time">{time}</div>
