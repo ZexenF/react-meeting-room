@@ -134,7 +134,7 @@ export default class App extends Component {
       <div className="empty">
         <img src={welcomeImage} alt="Welcome" />
         <h3>
-          None yet.
+          
         </h3>
       </div>
     );
@@ -156,7 +156,7 @@ export default class App extends Component {
         </div>
         <div className="upcoming-meetings">
           <div className="current-time">{time}</div>
-          <h1>Upcoming Meetings</h1>
+          <h1>Réservations</h1>
           <div className="list-group">
             {this.state.isLoading && loadingState}
             {events.length > 0 && eventsList}
