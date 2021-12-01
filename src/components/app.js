@@ -8,7 +8,7 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      time: moment().format("dd, Do MMMM, h:mm A"),
+      time: moment().format("dd, MMMM Do YYYY, HH:mm"),
       events: [],
       isBusy: false,
       isEmpty: false,
@@ -77,7 +77,7 @@ export default class App extends Component {
   }
 
   tick = () => {
-    let time = moment().format("dddd, Do MMMM, h:mm A");
+    let time = moment().format("dddd, MMMM Do YYYY, HH:mm");
     this.setState({
       time: time
     });
@@ -119,12 +119,12 @@ export default class App extends Component {
         >
           {event.summary}{" "}
           <span className="badge">
-            {moment(event.start.dateTime).format("h:mm a")},{" "}
+            {moment(event.start.dateTime).format("HH:mm")},{" "}
             {moment(event.end.dateTime).diff(
               moment(event.start.dateTime),
               "minutes"
             )}{" "}
-            minutes, {moment(event.start.dateTime).format("MMMM Do")}{" "}
+            minutes, {moment(event.start.dateTime).format("MMMM Do YYYY")}{" "}
           </span>
         </a>
       );
