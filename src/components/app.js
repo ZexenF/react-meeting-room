@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import dayjs from "dayjs";
-import 'dayjs/local/fr';
+import 'dayjs/locale/fr';
 import welcomeImage from "../images/welcome.svg";
 import spinner from "../images/spinner.svg";
 import { GOOGLE_API_KEY, CALENDAR_ID } from "../config.js";
