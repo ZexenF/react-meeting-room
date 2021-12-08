@@ -31,7 +31,7 @@ A simple web app to book meeting room inside an office.
 
 ### Google Calendar Configuartion
 
-1.  Grab [GAS-ICS-SYNC](https://github.com/derekantrican/GAS-ICS-Sync) and configure the calendars wanted.
+1.  Grab [GAS-ICS-SYNC](https://github.com/derekantrican/GAS-ICS-Sync) and configure the calendars wanted. Execute the script, and once the sync has completed, you should see your newly created calendars.
 2.  Then in [Google Calendar](https://calendar.google.com/calendar/u/0/r/settings) under _Access Permissions_ section, just enable the **Make available to public** checkbox.
 
     ![Step 1](https://res.cloudinary.com/sivadass/image/upload/v1520704625/screen-shots/step-1.png)
