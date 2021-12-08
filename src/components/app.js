@@ -9,7 +9,7 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      time: dayjs().format("dddd, D MMMM YYYY, HH:mm"),
+      time: moment().format("dddd, D MMMM YYYY, HH:mm"),
       events: [],
       isBusy: false,
       isEmpty: false,
@@ -36,7 +36,7 @@ export default class App extends Component {
         })
         .then(function() {
           return gapi.client.request({
-            path: `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?maxResults=11&orderBy=updated&timeMin=${dayjs().toISOString()}&timeMax=${dayjs()
+            path: `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?maxResults=11&orderBy=updated&timeMin=${moment().toISOString()}&timeMax=${moment()
               .endOf("day")
               .toISOString()}`
           });
@@ -46,8 +46,8 @@ export default class App extends Component {
             let events = response.result.items;
             let sortedEvents = events.sort(function(a, b) {
               return (
-                dayjs(b.start.dateTime).format("YYYYMMDD") -
-                dayjs(a.start.dateTime).format("YYYYMMDD")
+                moment(b.start.dateTime).format("YYYYMMDD") -
+                moment(a.start.dateTime).format("YYYYMMDD")
               );
             });
             if (events.length > 0) {
@@ -78,21 +78,21 @@ export default class App extends Component {
   }
 
   tick = () => {
-    let time = dayjs().format("dddd, D MMMM YYYY, HH:mm");
+    let time = moment().format("dddd, D MMMM YYYY, HH:mm");
     this.setState({
       time: time
     });
   };
 
   setStatus = () => {
-    let now = dayjs();
+    let now = moment();
     let events = this.state.events;
     for (var e = 0; e < events.length; e++) {
       var eventItem = events[e];
       if (
-        dayjs(now).isBetween(
-          dayjs(eventItem.start.dateTime),
-          dayjs(eventItem.end.dateTime)
+        moment(now).isBetween(
+          moment(eventItem.start.dateTime),
+          moment(eventItem.end.dateTime)
         )
       ) {
         this.setState({
@@ -120,13 +120,13 @@ export default class App extends Component {
         >
           {event.summary}{" "}
           <span className="badge">
-            {dayjs(event.start.dateTime).format("HH:mm")},{" "}
-            {dayjs(event.end.dateTime).diff(
-              dayjs(event.start.dateTime),
+            {moment(event.start.dateTime).format("HH:mm")},{" "}
+            {moment(event.end.dateTime).diff(
+              moment(event.start.dateTime),
               "minutes"
 
             )}{" "}
-            minutes, {dayjs(event.start.dateTime).format("D MMMM YYYY")}{" "}
+            minutes, {moment(event.start.dateTime).format("D MMMM YYYY")}{" "}
           </span>
         </a>
       );
