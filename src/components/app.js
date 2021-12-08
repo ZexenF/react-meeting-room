@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import dayjs from "dayjs";
-import 'dayjs/locale/fr';
+import moment from "moment";
+import 'moment/locale/fr';
 import welcomeImage from "../images/welcome.svg";
 import spinner from "../images/spinner.svg";
 import { GOOGLE_API_KEY, CALENDAR_ID } from "../config.js";
-dayjs.locale('fr');
 
 export default class App extends Component {
   constructor(props) {
